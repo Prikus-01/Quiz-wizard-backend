@@ -2,6 +2,6 @@
 
 # clone this folder
 
-# run npm install
+# run "npm install"
 
-# run node server.js
+# run "node server.js"
