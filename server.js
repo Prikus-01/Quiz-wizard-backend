@@ -8,7 +8,7 @@ const app = express();
 //     origin: 'https://nancy-frontend-app.vercel.app',
 //     credentials: true
 // }))
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
