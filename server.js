@@ -4,11 +4,11 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-// app.use(cors({
-//     origin: 'https://nancy-frontend-app.vercel.app',
-//     credentials: true
-// }))
-app.use(cors({ origin: "*" }));
+app.use(cors({
+    origin: 'https://quiz-wizard-backend.vercel.app',
+    credentials: true
+}))
+// app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
