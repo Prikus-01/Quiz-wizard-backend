@@ -24,6 +24,9 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
+app.get('/',(req,res) => {
+  res.send("server is running");
+});
 const quizRoutes = require("./routes/quizRouter");
 app.use("/api/quiz", quizRoutes);
 
