@@ -14,9 +14,13 @@ router.post("/create", async (req, res) => {
 
 // Fetch a Quiz
 router.get("/:quizId", async (req, res) => {
-  const quiz = await Quiz.findOne({ quizId: req.params.quizId });
-  if (!quiz) return res.status(404).json({ message: "Quiz not found" });
-  res.json(quiz.body);
+  try {
+    const quiz = await Quiz.findOne({ quizId: req.params.quizId });
+    if (!quiz) return res.status(404).json({ message: "Quiz not found" });
+    res.json(quiz.body);
+  } catch (error) {
+    res.status(500).send("server error");
+  }
 });
 
 module.exports = router;
